@@ -146,6 +146,7 @@ class Content extends React.Component {
     const { anchorKey, anchorOffset, focusKey, focusOffset, isCollapsed } = selection
     const anchor = findNativePoint(anchorKey, anchorOffset)
     const focus = isCollapsed ? anchor : findNativePoint(focusKey, focusOffset)
+    if (!anchor || !focus) return;
 
     // If they are already selected, do nothing.
     if (
